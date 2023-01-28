@@ -24,6 +24,7 @@ class Card():
     # def __repr__(self):
     #     return f"Card({self.rank},{self.suit})"
 
+#test
 # print(Card("2", "Hearts"))
 # print(Card("Ace", "Spades"))
 
@@ -36,10 +37,23 @@ class Deck():
 
     def add_cards(self, cards):
         self.cards.extend(cards)
-
-
-
+#test
 # standard_deck = Card.make_52_card_deck()
 # deck = Deck()
 # deck.add_cards(standard_deck)
 # print(deck)
+
+class Hand():
+    def __init__(self, cards):
+        self.cards = cards
+        if len(cards) > 2:
+            raise ValueError("You can only have 2 cards")
+
+    def __repr__(self):
+        return f"{self.cards}"
+
+#test 
+# cards = [Card("Ace", "Spades"), Card("4", "Diamonds")]
+# cards = [Card("Ace", "Spades"), Card("4", "Diamonds"), Card("2", "Hearts")]
+# print(Hand(cards))
+
